@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                </div>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+             
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">Ví tiền: 150.000 VNĐ </p>
+                </div>
+            </li>
+            <li class="nav-item d-none d-lg-block full-screen-link">
+              <a class="nav-link">
+                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="#">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                  <img src="../../assets/images/faces/face1.jpg" alt="profile">
+                  <span class="login-status online"></span>
+                  <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                  <span class="font-weight-bold mb-2">Hà Thị Khách Ly</span>
+                </div>
+                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <span class="menu-title">Trang chủ</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/Transaction/createTransaction.html">
+                <span class="menu-title">Tạo  giao dịch</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/charts/chartjs.html">
+                <span class="menu-title">Biểu đồ</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/Transaction/ListTransaction.html">
+                <span class="menu-title">Danh sách giao dịch</span>
+                <i class="mdi mdi-table-large menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Tạo các giao dịch </h3>
+            </div>
+            <!-- Chi tiêu -->
+            <div class="row" style="grid-template-columns: 1fr;width: 1800px;margin-left: 150px;">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <div class="input-group" style="margin-bottom: 50px;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 50px;">Chi tiêu</button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-access-point"></i>&ensp;Tiền mạng</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-food"></i>&ensp;Ăn uống</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-shopping"></i>&ensp;Đi shopping</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-coffee"></i>&ensp;Tiền cafe</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-home"></i>&ensp;Tiền nhà</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-call-received"></i>&ensp;Tiền điện nước</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-cellphone"></i>&ensp;Tiền điện thoại</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-gamepad-variant"></i>&ensp;Tiền chơi game</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-bus"></i>&ensp;Tiền bus</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-gender-male-female"></i>&ensp;Tiền hẹn hò</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-car"></i>&ensp;Phí xe</a>
+                            
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                      </div>
+                    
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text bg-gradient-primary text-white">VNĐ</span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                      <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-block btn-lg btn-gradient-primary mt-4">Tạo</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Thu nhập -->
+          <div class="row" style="grid-template-columns: 1fr;width: 1800px;margin-left: 150px;">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="form-group">
+                    <div class="input-group" style="margin-bottom: 50px;">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 50px;">Thu nhập</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#"><i class="mdi mdi-calendar-clock"></i>&ensp;Partime</a>
+                          <a class="dropdown-item" href="#"><i class="mdi mdi-food"></i>&ensp;Bán hàng</a>
+                          <a class="dropdown-item" href="#"><i class="mdi mdi-shopping"></i>&ensp;Nhân viên văn phòng</a>
+                          <a class="dropdown-item" href="#"><i class="mdi mdi-coffee"></i>&ensp;Phục vụ</a>
+                          <a class="dropdown-item" href="#"><i class="mdi mdi-cellphone"></i>&ensp;Mẫu ảnh</a>
+                        
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                    </div>
+                  
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-gradient-primary text-white">VNĐ</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">Tạo</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright ©</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../../assets/js/file-upload.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
