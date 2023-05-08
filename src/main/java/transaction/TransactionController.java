@@ -29,7 +29,7 @@ public class TransactionController extends HttpServlet {
         response.setContentType("application/json");
 
         Transaction transaction = HttpUtil.of(request.getReader()).toModel(Transaction.class);
-
+        System.out.println(transaction);
         service.save(transaction);
 
 

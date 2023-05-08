@@ -26,9 +26,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 
 <body id="page-top">
 <%
-    List<Transaction> transactions = new TransactionService().getAll();
-    List<Category> categories = new CategoryService().getAll("thu");
-    User user = (User)SessionUntil.get(request, "user");
+    List<Transaction> transactions = (List<Transaction>) request.getAttribute("transaction");
+    List<Category> categories = (List<Category>) request.getAttribute("category");
+    User user = (User) SessionUntil.get(request, "USER");
 %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
@@ -39,11 +39,16 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
         </a>
             <hr class="sidebar-divider my-0">
             <ul class="navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link " href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="profile.jsp"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                <li class="nav-item"><a class="nav-link active" href="transaction.jsp"><i class="fas fa-money-check"></i><span>transaction</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
+                <li class="nav-item"><a class="nav-link " href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="profile.jsp"><i
+                        class="fas fa-user"></i><span>Profile</span></a></li>
+                <li class="nav-item"><a class="nav-link active" href="transaction.jsp"><i
+                        class="fas fa-money-check"></i><span>transaction</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html"><i
+                        class="far fa-user-circle"></i><span>Login</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a>
+                </li>
             </ul>
             <div class="text-center d-none d-md-inline">
                 <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
@@ -56,7 +61,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                 <div class="container-fluid">
                     <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop-1" type="button"><i
                             class="fas fa-bars"></i></button>
-                    <%=user.getMoney()%> VND
+                    <%--                    <%=user.getMoney()%> VND--%>
                     <ul class="navbar-nav flex-nowrap ms-auto">
                         <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
                                                                             aria-expanded="false"
@@ -64,7 +69,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                 class="fas fa-search"></i></a>
                             <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in"
                                  aria-labelledby="searchDropdown">
-                                <%=user.getMoney()%> VND
+                                <%--                                <%=user.getMoney()%> VND--%>
                             </div>
                         </li>
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -188,15 +193,15 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                             <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="form" class="row g-3 needs-validation" novalidate>
+                            <form id="form" class="row g-3 ">
                                 <div class="col-md-6">
                                     <label for="validationCustom04" class="form-label">type</label>
                                     <select class="form-select" id="validationCustom04" required>
 
-                                        <option selected value="thu">Thu</option>
-                                        <option value="chi">Chi</option>
-                                        <option value="vay">Vay</option>
-                                        <option value="no">Nợ</option>
+                                        <option selected value="THU">Thu</option>
+                                        <option value="CHI">Chi</option>
+                                        <option value="VAY">Vay</option>
+                                        <option value="NO">Nợ</option>
                                     </select>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -204,19 +209,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                 </div>
                                 <div class="col-md-6">
                                     <label for="validationCustom08" class="form-label">category</label>
-                                    <select class="form-select" name="categoryId" id="validationCustom08" required>
-                                        <%
-                                            for (int i = 0; i < categories.size(); i++) {
+                                    <select class="form-select" data-value="number" name="categoryId" id="validationCustom08" required>
 
-
-                                        %>
-                                        <option value="<%=categories.get(i).getId()%>" <%=i == 0 ? "selected" : ""%>  >
-                                            <%=categories.get(i).getName()%>
-                                        </option>
-                                        <option value="<%=categories.get(i).getId()%>">
-                                            <%=categories.get(i).getName()%>
-                                        </option>
-                                        <% }%>
                                     </select>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -254,7 +248,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" id="save" type="submit">Save</button>
+                            <button class="btn btn-primary" id="save">Save</button>
                         </div>
                     </div>
                 </div>
@@ -374,46 +368,18 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 <script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
 "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/3.2.1/jquery.serializejson.min.js" integrity="sha512-SdWDXwOhhVS/wWMRlwz3wZu3O5e4lm2/vKK3oD0E5slvGFg/swCYyZmts7+6si8WeJYIUsTrT3KZWWCknSopjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
+
     $('#form').on('submit', function (e) {
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-                if (!form.checkValidity()) {
-                    e.preventDefault()
-                    e.stopPropagation()
-                } else {
-                    obj = $('form#form').serializeObject()
-                    obj['userId'] =<%=user.getId()%>;
-
-                    add(obj, "/api/transaction");
-                }
-
-                form.classList.add('was-validated')
-            })
-
+        e.preventDefault();
+        let obj = $(this).serializeJSON()
+        obj['userId'] =<%=user.getId()%>;
+        console.log(obj)
+        add(obj, "/api/transaction");
     });
-    // Định nghĩa lại hàm serializeObject() trong jQuery
-    $.fn.serializeObject = function () {
-        var obj = {};
-        var arr = this.serializeArray();
-        $.each(arr, function () {
-            if (obj[this.name] !== undefined) {
-                if (!obj[this.name].push) {
-                    obj[this.name] = [obj[this.name]];
-                }
-                obj[this.name].push(this.value || '');
-            } else {
-                obj[this.name] = this.value || '';
-            }
-        });
-        return obj;
-    };
 
     $('#save').on('click', function (e) {
-        e.preventDefault(); // Ngăn chặn hành vi mặc định của nút
         $('#form').submit(); // Thực hiện submit form
     });
 
@@ -448,10 +414,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
 
     }
 
-    $('#validationCustom04').on('change', function () {
+    //selected in option
+    loadCate($('#validationCustom04').val())
+
+    function loadCate(value) {
         $.ajax({
             type: 'GET',
-            url: '/api/category?type=' + $(this).val(),
+            url: '/api/category?type=' + value,
             dataType: 'json',
             success: function (data) {
                 $('#validationCustom08').empty();
@@ -460,6 +429,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
                 });
             }
         });
+    }
+
+    $('#validationCustom04').on('change', function () {
+        loadCate($(this).val())
     })
 
 </script>
