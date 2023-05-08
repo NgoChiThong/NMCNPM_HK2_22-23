@@ -12,16 +12,15 @@ public class UserDAO {
         });
     }
 
-    public User get(int id){
+    public User get(int id) {
 
-     return   JDBiConnector.get().withHandle(handle -> {
+        return JDBiConnector.get().withHandle(handle -> {
 
-          return  handle.createQuery("select * from users WHERE id = :id")
-                    .bind("id", userId)
-                    .mapToBean(User.class)
-                    .execute();
+            return handle.createQuery("select * from users WHERE id = :id")
+                    .bind("id", id)
+                    .mapToBean(User.class).one();
 
-        })
+        });
 
     }
 
