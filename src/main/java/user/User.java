@@ -89,4 +89,11 @@ public class User {
         this.avatar = avatar;
         this.money = money;
     }
+
+    public User(Timestamp created_at, String name, String email, String pass) {
+        this.created_at = created_at;
+        this.name = name;
+        this.email = email;
+        this.pass = pass;
+    }
 }
