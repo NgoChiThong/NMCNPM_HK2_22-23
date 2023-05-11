@@ -26,11 +26,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 
 <body id="page-top">
 <%
-    List<Transaction> transactions = new TransactionService().getAll();
-    List<Category> categories = new CategoryService().getAll("thu");
-//    User user = (User)SessionUntil.get(request, "user");
-    HttpSession session1=request.getSession(true);
-    User user= (User) session1.getAttribute("user");
+    List<Transaction> transactions = (List<Transaction>) request.getAttribute("transaction");
+    List<Category> categories = (List<Category>) request.getAttribute("category");
+    User user = (User) SessionUntil.get(request, "USER");
 %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
@@ -41,11 +39,16 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
         </a>
             <hr class="sidebar-divider my-0">
             <ul class="navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link " href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="profile.jsp"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                <li class="nav-item"><a class="nav-link active" href="transaction.jsp"><i class="fas fa-money-check"></i><span>transaction</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="login.jsp"><i class="far fa-user-circle"></i><span>Login</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="register.jsp"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
+                <li class="nav-item"><a class="nav-link " href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="profile.jsp"><i
+                        class="fas fa-user"></i><span>Profile</span></a></li>
+                <li class="nav-item"><a class="nav-link active" href="transaction.jsp"><i
+                        class="fas fa-money-check"></i><span>transaction</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html"><i
+                        class="far fa-user-circle"></i><span>Login</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a>
+                </li>
             </ul>
             <div class="text-center d-none d-md-inline">
                 <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>

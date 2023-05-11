@@ -19,6 +19,7 @@ public class UserFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+
         SessionUntil.set((HttpServletRequest) request, "USER", new UserService().get(1));
         chain.doFilter(request, response);
     }
