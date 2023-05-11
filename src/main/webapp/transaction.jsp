@@ -28,7 +28,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 <%
     List<Transaction> transactions = (List<Transaction>) request.getAttribute("transaction");
     List<Category> categories = (List<Category>) request.getAttribute("category");
-    User user = (User) SessionUntil.get(request, "USER");
+//    User user = (User) SessionUntil.get(request, "USER");
+    HttpSession session1=request.getSession(true);
+    User user=(User)session1.getAttribute("user");
 %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
