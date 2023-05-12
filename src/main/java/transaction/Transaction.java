@@ -25,13 +25,13 @@ public class Transaction {
     private Integer userId;
 
 
-    private Category _getCategory() {
+    public Category _getCategory() {
         return JDBiConnector.get().withHandle(handle -> {
             return handle.createQuery("SELECT * FROM categories WHERE id = :id").bind("id", this.categoryId).mapToBean(Category.class).findOnly();
         });
     }
 
-    private User _getUser() {
+    public User _getUser() {
         return JDBiConnector.get().withHandle(handle -> {
             return handle.createQuery("SELECT * FROM users WHERE id = :id").bind("id", this.userId).mapToBean(User.class).findOnly();
         });

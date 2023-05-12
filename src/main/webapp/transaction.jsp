@@ -308,10 +308,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                 <tr>
                                     <td>
                                         <div style="display: flex;align-items: center">
-                                            <img src="<%=transaction.getCategory().getIcon()%>"
+                                            <img src="<%=transaction._getCategory().getIcon()%>"
                                                  style="width:50px;height: 50px"/>
-                                            <div><%=transaction.getCategory().getType()%>
-                                                <br/> <%=transaction.getCategory().getName()%>
+                                            <div><%=transaction._getCategory().getType()%>
+                                                <br/> <%=transaction._getCategory().getName()%>
                                             </div>
                                         </div>
                                     </td>

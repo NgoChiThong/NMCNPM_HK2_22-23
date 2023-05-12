@@ -15,12 +15,12 @@ public class TransactionService {
     }
 
     public Integer save(Transaction transaction) {
-        if (transaction.getCategory().getType().equals(CategoryType.THU.toString())) {
-            serviceUser.updateMoney(transaction.getUserId(), transaction.getUser().getMoney() + transaction.getMoney());
-        } else if (transaction.getCategory().getType().equals(CategoryType.CHI.toString())) {
-            serviceUser.updateMoney(transaction.getUserId(), transaction.getUser().getMoney() - transaction.getMoney());
-        } else if (transaction.getCategory().getType().equals(CategoryType.VAY.toString())) {
-            serviceUser.updateMoney(transaction.getUserId(), transaction.getUser().getMoney() - transaction.getMoney());
+        if (transaction._getCategory().getType().equals(CategoryType.THU.toString())) {
+            serviceUser.updateMoney(transaction.getUserId(), transaction._getUser().getMoney() + transaction.getMoney());
+        } else if (transaction._getCategory().getType().equals(CategoryType.CHI.toString())) {
+            serviceUser.updateMoney(transaction.getUserId(), transaction._getUser().getMoney() - transaction.getMoney());
+        } else if (transaction._getCategory().getType().equals(CategoryType.VAY.toString())) {
+            serviceUser.updateMoney(transaction.getUserId(), transaction._getUser().getMoney() - transaction.getMoney());
         }
         return dao.save(transaction);
 
