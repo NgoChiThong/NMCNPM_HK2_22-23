@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,22 +16,22 @@
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Money Lover</span></div>
-                </a>
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>Money Lover</span></div>
+            </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="transaction.jsp"><i class="fas fa-money-check"></i><span>transaction</span></a><a class="nav-link" href="profile.html"><i class="far fa-address-book"></i><span>Report</span></a><a class="nav-link" href="budget.html"><i class="fas fa-piggy-bank"></i><span>Budget</span></a><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.jsp"><i class="far fa-user-circle"></i><span>Login</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.jsp"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="forgot-password.html"><i class="fas fa-key"></i><span>Forgotten Password</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="404.jsp"><i class="fas fa-exclamation-circle"></i><span>Page Not Found</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Blank Page</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="transaction.jsp"><i class="fas fa-table"></i><span>Table</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/transaction"><i class="fas fa-money-check"></i><span>Giao dịch</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login"><i class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a></li>
                 </ul>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                <div class="text-center d-none d-md-inline">
+                    <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">
+                    </button>
+                </div>
+
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">

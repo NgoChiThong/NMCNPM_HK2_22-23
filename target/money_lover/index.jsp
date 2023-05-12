@@ -14,7 +14,8 @@
 </head>
 <%
     HttpSession session1=request.getSession(true);
-    User user= (User) session1.getAttribute("user");
+//    User user= (User) session1.getAttribute("user");
+    User user=(User)session1.getAttribute("user");
 %>
 
 <body id="page-top">
@@ -26,11 +27,11 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.jsp"><i class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="transaction.jsp"><i class="fas fa-money-check"></i><span>Giao dịch</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.jsp"><i class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.jsp"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/transaction"><i class="fas fa-money-check"></i><span>Giao dịch</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login"><i class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline">
                     <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">

@@ -16,18 +16,22 @@
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Money Lover</span></div>
-                </a>
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>Money Lover</span></div>
+            </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="profile.jsp"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="transaction.jsp"><i class="fas fa-money-check"></i><span>transaction</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.jsp"><i class="far fa-user-circle"></i><span>Login</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.jsp"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/transaction"><i class="fas fa-money-check"></i><span>Giao dịch</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login"><i class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a></li>
                 </ul>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                <div class="text-center d-none d-md-inline">
+                    <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">
+                    </button>
+                </div>
+
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
@@ -35,13 +39,13 @@
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ..."><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Tìm kếm ..."><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                         </form>
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Tìm kiếm ...">
                                             <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                                         </div>
                                     </form>
@@ -127,12 +131,12 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Profile</h3>
+                    <h3 class="text-dark mb-4">Hồ Sơ</h3>
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
                                 <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/image2.jpeg" width="160" height="160">
-                                    <div class="mb-3"><button class="btn btn-primary btn-sm" type="button">Change Photo</button></div>
+                                    <div class="mb-3"><button class="btn btn-primary btn-sm" type="button">Thay đổi</button></div>
                                 </div>
                             </div>
                             <div class="card shadow mb-4">
@@ -198,7 +202,7 @@
                                 <div class="col">
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">user Settings</p>
+                                            <p class="text-primary m-0 fw-bold">Càì</p>
                                         </div>
                                         <div class="card-body">
                                             <form>

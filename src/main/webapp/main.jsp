@@ -1,3 +1,3 @@
 <%
-    response.sendRedirect("/transaction");
+    response.sendRedirect("/home");
 %>

@@ -36,7 +36,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                         <h4 class="text-dark mb-4">Xin chào!</h4>
                                     </div>
                                     <%= error%>
-                                    <form class="user" action="${pageContext.request.contextPath}/login" method="get">
+                                    <form class="user" action="${pageContext.request.contextPath}/login" method="post">
                                         <div class="mb-3"><input class="form-control form-control-user" type="text" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email"></div>
                                         <div class="mb-3"><input class="form-control form-control-user" type="password" id="InputPassword" placeholder="Password" name="password"></div>
                                         <button class="btn btn-primary d-block btn-user w-100" type="submit">Đăng nhập</button>

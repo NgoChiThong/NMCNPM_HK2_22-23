@@ -36,27 +36,23 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-        <div class="container-fluid d-flex flex-column p-0"><a
-                class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+        <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
             <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
             <div class="sidebar-brand-text mx-3"><span>Money Lover</span></div>
         </a>
             <hr class="sidebar-divider my-0">
             <ul class="navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link " href="index.jsp"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="profile.jsp"><i
-                        class="fas fa-user"></i><span>Profile</span></a></li>
-                <li class="nav-item"><a class="nav-link active" href="transaction.jsp"><i
-                        class="fas fa-money-check"></i><span>transaction</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html"><i
-                        class="far fa-user-circle"></i><span>Login</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a>
-                </li>
+                <li class="nav-item"><a class="nav-link active" href="/home"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/transaction"><i class="fas fa-money-check"></i><span>Giao dịch</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/login"><i class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/register"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a></li>
             </ul>
             <div class="text-center d-none d-md-inline">
-                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">
+                </button>
             </div>
+
         </div>
     </nav>
     <div class="d-flex flex-column" id="content-wrapper">
