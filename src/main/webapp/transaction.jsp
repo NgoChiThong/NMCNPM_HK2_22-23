@@ -28,7 +28,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 <%
     List<Transaction> transactions = (List<Transaction>) request.getAttribute("transaction");
     List<Category> categories = (List<Category>) request.getAttribute("category");
-    User user = (User) SessionUntil.get(request, "USER");
+
+//    User user = (User) SessionUntil.get(request, "USER");
+    HttpSession session1=request.getSession(true);
+    User user=(User)session1.getAttribute("user");
+
 %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
@@ -167,7 +171,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                             <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                                                        aria-expanded="false" data-bs-toggle="dropdown"
                                                                        href="#"><span
-                                    class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img
+                                    class="d-none d-lg-inline me-2 text-gray-600 small"><%=user.getName()%></span><img
                                     class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
                                         class="dropdown-item" href="#"><i
