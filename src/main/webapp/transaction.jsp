@@ -209,7 +209,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
                                 </div>
                                 <div class="col-md-6">
                                     <label for="validationCustom08" class="form-label">category</label>
-                                    <select class="form-select" data-value="number" name="categoryId" id="validationCustom08" required>
+                                    <select class="form-select" data-value="number" name="categoryId"
+                                            id="validationCustom08" required>
 
                                     </select>
                                     <div class="valid-feedback">
@@ -368,14 +369,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 <script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
 "></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/3.2.1/jquery.serializejson.min.js" integrity="sha512-SdWDXwOhhVS/wWMRlwz3wZu3O5e4lm2/vKK3oD0E5slvGFg/swCYyZmts7+6si8WeJYIUsTrT3KZWWCknSopjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
     $('#form').on('submit', function (e) {
         e.preventDefault();
-        let obj = $(this).serializeJSON()
+        let obj = {}
         obj['userId'] =<%=user.getId()%>;
-        console.log(obj)
         add(obj, "/api/transaction");
     });
 
