@@ -211,10 +211,13 @@
                                             <p class="text-primary m-0 fw-bold">Càì</p>
                                         </div>
                                         <div class="card-body">
-                                            <form action="${pageContext.request.contextPath}/profile" method="post">
+                                            <form action="${pageContext.request.contextPath}/profile-handle" method="post">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="name"><strong>Name</strong></label><input class="form-control" type="text" id="name"  value="<%=user.getName()%>"  placeholder="user.name" name="name"></div>
+                                                        <div class="mb-3">
+                                                            <input class="form-control" type="text" id="name"  value="<%=user.getName()%>"  placeholder="user" name="name"/>
+                                                            <label class="form-label" for="name"><strong>Name</strong></label>
+                                                        </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="mb-3"><label class="form-label" for="email"><strong>Email</strong></label><input class="form-control" type="email" id="email" value="<%=user.getEmail()%>" placeholder="user@example.com" name="email"></div>

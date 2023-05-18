@@ -17,7 +17,7 @@ public class TransactionController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("transaction", new TransactionService().getAll());
         request.setAttribute("category", CategoryService.getAll("THU"));
-        request.getRequestDispatcher("/transaction.jsp").forward(request, response);
+        request.getRequestDispatcher("transaction.jsp").forward(request, response);
     }
 
     @Override
