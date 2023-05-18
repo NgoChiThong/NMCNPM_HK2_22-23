@@ -22,7 +22,7 @@ public class loginController extends HttpServlet {
         String pass=request.getParameter("password");
 //        2. Gọi phương thức getUser trong lớp UserDao để lấy ra tìm ra user theo đúng email và password
         UserDAO dao=new UserDAO();
-        User u=dao.getUser(user,pass);
+        User u= dao.getUser(user,pass);
 //        3. Lưu user vào session
 
 //        4. Nếu không tìm thấy user ( tức là email hoặc password bị sai) trả về trang login.jsp
@@ -34,7 +34,7 @@ public class loginController extends HttpServlet {
         else{
             HttpSession session = request.getSession(true);
             session.setAttribute("user",u);
-         response.sendRedirect("/home");
+           response.sendRedirect("/home");
         }
     }
 }

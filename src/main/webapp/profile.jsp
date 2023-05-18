@@ -1,3 +1,4 @@
+<%@ page import="user.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -11,7 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
 </head>
+<%
 
+    HttpSession session1=request.getSession(true);
+//    User user= (User) session1.getAttribute("user");
+    User user=(User)session1.getAttribute("user");;
+%>
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
@@ -205,21 +211,21 @@
                                             <p class="text-primary m-0 fw-bold">Càì</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
+                                            <form action="${pageContext.request.contextPath}/profile" method="post">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Username</strong></label><input class="form-control" type="text" id="username" placeholder="user.name" name="username"></div>
+                                                        <div class="mb-3"><label class="form-label" for="name"><strong>Name</strong></label><input class="form-control" type="text" id="name"  value="<%=user.getName()%>"  placeholder="user.name" name="name"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" placeholder="user@example.com" name="email"></div>
+                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email</strong></label><input class="form-control" type="email" id="email" value="<%=user.getEmail()%>" placeholder="user@example.com" name="email"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_name" placeholder="John" name="first_name"></div>
+                                                        <div class="mb-3"><label class="form-label" for="pass"><strong>Password</strong></label><input class="form-control" type="text" id="pass" value="<%=user.getPass()%>" placeholder="John" name="pass"></div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
+                                                    <div class="col" hidden="hidden" >
+                                                        <div class="mb-3"><label class="form-label" ><strong>Password</strong></label><input  class="form-control" type="text"  value="<%=user.getId()%>"  name="id"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
