@@ -3,10 +3,10 @@ package DB;
 import java.sql.*;
 
 public class DBConnect {
-    String url =  "jdbc:mysql://localhost:3306/money";
+    String url =  "jdbc:mysql://18.141.10.250:3306/money";
 
     String user = "root";
-    String password = "";
+    String password = "12345";
 
     Connection connection;
     static DBConnect ins;
