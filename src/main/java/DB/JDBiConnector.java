@@ -19,14 +19,13 @@ public class JDBiConnector {
 
     public static void create() {
         try {
-
             BasicDataSource ds = new BasicDataSource();
             ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            ds.setPassword("");
+            ds.setPassword("12345");
             ds.setUsername("root");
             ds.setMaxIdle(2);
             ds.setMinIdle(2);
-            ds.setUrl("jdbc:mysql://localhost:3306/money");
+            ds.setUrl("jdbc:mysql://18.141.10.250:3306/money");
             Connection cn = ds.getConnection();
             jdbi = Jdbi.create(cn);
         } catch (SQLException e) {

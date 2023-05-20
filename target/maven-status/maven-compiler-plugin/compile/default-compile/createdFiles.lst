@@ -19,6 +19,5 @@ user\registerController.class
 transaction\TransactionController.class
 user\UserDAO.class
 until\HttpUtil.class
-filter\UserFilter.class
 user\UserService.class
 DB\JDBiConnector.class
