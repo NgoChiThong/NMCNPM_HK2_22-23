@@ -19,7 +19,7 @@
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+/assets/sw.css
 " rel="stylesheet">
 
 </head>
@@ -30,23 +30,29 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
     List<Category> categories = (List<Category>) request.getAttribute("category");
 
 //    User user = (User) SessionUntil.get(request, "USER");
-    HttpSession session1=request.getSession(true);
-    User user=(User)session1.getAttribute("user");
+    HttpSession session1 = request.getSession(true);
+    User user = (User) session1.getAttribute("user");
 
 %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-        <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+        <div class="container-fluid d-flex flex-column p-0"><a
+                class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
             <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
             <div class="sidebar-brand-text mx-3"><span>Money Lover</span></div>
         </a>
             <hr class="sidebar-divider my-0">
             <ul class="navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link active" href="/home"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="/transaction"><i class="fas fa-money-check"></i><span>Giao dịch</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="/login"><i class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="/register"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a></li>
+                <li class="nav-item"><a class="nav-link active" href="/home"><i class="fas fa-tachometer-alt"></i><span>Trang chủ</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/profile"><i
+                        class="fas fa-user"></i><span>Trang cá nhân</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/transaction"><i class="fas fa-money-check"></i><span>Giao dịch</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/login.jsp"><i
+                        class="far fa-user-circle"></i><span>Đăng nhập</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/register.jsp"><i class="fas fa-user-circle"></i><span>Đăng kí</span></a>
+                </li>
             </ul>
             <div class="text-center d-none d-md-inline">
                 <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">
@@ -367,13 +373,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
         crossorigin="anonymous"></script>
 <script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+/assets/js/sw.js
 "></script>
 <script type="text/javascript">
 
     $('#form').on('submit', function (e) {
         e.preventDefault();
-        let obj = {}
+        let obj = $(this).serializeObject();
+
         obj['userId'] =<%=user.getId()%>;
         add(obj, "/api/transaction");
     });
@@ -381,6 +388,21 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
     $('#save').on('click', function (e) {
         $('#form').submit(); // Thực hiện submit form
     });
+    $.fn.serializeObject = function () {
+        var obj = {};
+        var arr = this.serializeArray();
+        $.each(arr, function () {
+            if (obj[this.name] !== undefined) {
+                if (!obj[this.name].push) {
+                    obj[this.name] = [obj[this.name]];
+                }
+                obj[this.name].push(this.value || '');
+            } else {
+                obj[this.name] = this.value || '';
+            }
+        });
+        return obj;
+    };
 
     function add(data, url) {
         $.ajax({
@@ -401,14 +423,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
                 allowEnterKey: false
             }).then((result) => {
                 if (result.isConfirmed) {
-                    location.reload();
+                    window.location.reload()
                 }
             })
 
         }).fail(function (jqXHR, status, error) {
-            if (jqXHR.status !== 500) {
-                warningAlert('Lỗi liệu lỗi');
-            } else warningAlert("Xảy ra lỗi. <br/>Vui lòng liên hệ Admin.");
+
         })
 
     }

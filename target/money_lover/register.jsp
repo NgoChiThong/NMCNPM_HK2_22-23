@@ -18,38 +18,46 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 </head>
 
 <body class="bg-gradient-primary">
-    <div class="container">
-        <div class="card shadow-lg o-hidden border-0 my-5">
-            <div class="card-body p-0">
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-flex">
-<%--                        <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;assets/img/dogs/image2.jpeg&quot;);"></div>--%>
-    <img src="assets/img/dogs/img.png">
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h4 class="text-dark mb-4">Tạo tài khoản!</h4>
+<div class="container">
+    <div class="card shadow-lg o-hidden border-0 my-5">
+        <div class="card-body p-0">
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-flex">
+                    <%--                        <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;assets/img/dogs/image2.jpeg&quot;);"></div>--%>
+                    <img src="assets/img/dogs/img.png">
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h4 class="text-dark mb-4">Tạo tài khoản!</h4>
+                        </div>
+                        <form class="user" action="${pageContext.request.contextPath}/register" method="POST">
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+                                                                          type="text" id="exampleFirstName"
+                                                                          placeholder="Full Name" name="name"></div>
                             </div>
-                            <form class="user" action="${pageContext.request.contextPath}/register" method="POST">
-                                <div class="row mb-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Full Name" name="name"></div>
-                                </div>
-                                <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" name="user"></div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="password"></div>
-                                </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Đăng kí</button>
-                            </form>
-                            <div class="text-center"><a class="small" href="login.jsp">Đã có tài khoản ? Đăng nhập!</a></div>
+                            <div class="mb-3"><input class="form-control form-control-user" type="email"
+                                                     id="exampleInputEmail" aria-describedby="emailHelp"
+                                                     placeholder="Email Address" name="user"></div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+                                                                          type="password" id="examplePasswordInput"
+                                                                          placeholder="Password" name="password"></div>
+                            </div>
+                            <button class="btn btn-primary d-block btn-user w-100" type="submit">Đăng kí</button>
+                        </form>
+                        <div class="text-center"><a class="small" href="/login.jsp">Đã có tài khoản ? Đăng nhập!</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../../..Timestamp/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../..Timestamp/assets/js/bs-init.js"></script>
-    <script src="../../..Timestamp/assets/js/theme.js"></script>
+</div>
+<script src="../../..Timestamp/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../..Timestamp/assets/js/bs-init.js"></script>
+<script src="../../..Timestamp/assets/js/theme.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserDAO {
-    //    public static Map<String, User> mapUser = loadUsername();
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;

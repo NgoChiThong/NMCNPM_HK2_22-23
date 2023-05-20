@@ -18,8 +18,8 @@ public class UserService {
 
     public User create(User u){
         return JDBiConnector.get().withHandle(handle -> {
-             handle.createUpdate("INSERT INTO users (created_at, name,email,pass) " +
-                            "VALUES (:created_at,:name,:email,:pass)")
+             handle.createUpdate("INSERT INTO users (created_at, name,email,pass,money) " +
+                            "VALUES (:created_at,:name,:email,:pass,0)")
                     .bindBean(u).execute();
             return u;
         });
