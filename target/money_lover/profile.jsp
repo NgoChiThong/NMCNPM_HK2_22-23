@@ -173,18 +173,17 @@
                             <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                                                        aria-expanded="false" data-bs-toggle="dropdown"
                                                                        href="#"><span
-                                    class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img
+                                    class="d-none d-lg-inline me-2 text-gray-600 small"><%=user.getName()%></span><img
                                     class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
                                         class="dropdown-item" href="#"><i
-                                        class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a
-                                        class="dropdown-item" href="#"><i
-                                        class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a
-                                        class="dropdown-item" href="#"><i
-                                        class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                        class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Hồ Sơ</a>
+                                        <a class="dropdown-item" href="#"><i
+                                        class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Cài Đặt</a>
+
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#"><i
-                                            class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                            class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Đăng Xuất</a>
                                 </div>
                             </div>
                         </li>
@@ -206,7 +205,7 @@
                         </div>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="text-primary fw-bold m-0">Projects</h6>
+                                <h6 class="text-primary fw-bold m-0">Dự Án</h6>
                             </div>
                             <div class="card-body">
                                 <h4 class="small fw-bold">Server migration<span class="float-end">20%</span></h4>
@@ -279,75 +278,65 @@
                             <div class="col">
                                 <div class="card shadow mb-3">
                                     <div class="card-header py-3">
-                                        <p class="text-primary m-0 fw-bold">Càì</p>
+                                        <p class="text-primary m-0 fw-bold">Thông tin</p>
                                     </div>
                                     <div class="card-body">
                                         <form action="${pageContext.request.contextPath}/profile-handle" method="post">
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="mb-3">
-                                                        <input class="form-control" type="text" id="name"
-                                                               value="<%=user.getName()%>" placeholder="user"
-                                                               name="name"/>
-                                                        <label class="form-label"
-                                                               for="name"><strong>Name</strong></label>
+                                                        <label class="form-label" for="name"><strong>Tên tài khoản</strong></label>
+                                                        <input class="form-control" type="text" id="name" value="<%=user.getName()%>" placeholder="user" name="name"/>
                                                     </div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="mb-3"><label class="form-label" for="email"><strong>Email</strong></label><input
-                                                            class="form-control" type="email" id="email"
-                                                            value="<%=user.getEmail()%>" placeholder="user@example.com"
-                                                            name="email"></div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="email"><strong>Email</strong></label>
+                                                        <input class="form-control" type="email" id="email" value="<%=user.getEmail()%>" placeholder="user@example.com" name="email"></div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="mb-3"><label class="form-label" for="pass"><strong>Password</strong></label><input
-                                                            class="form-control" type="text" id="pass"
-                                                            value="<%=user.getPass()%>" placeholder="John" name="pass">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="pass"><strong>Mật khẩu</strong></label>
+                                                        <input class="form-control" type="text" id="pass" value="<%=user.getPass()%>" placeholder="John" name="pass">
                                                     </div>
                                                 </div>
                                                 <div class="col" hidden="hidden">
-                                                    <div class="mb-3"><label
-                                                            class="form-label"><strong>Password</strong></label><input
-                                                            class="form-control" type="text" value="<%=user.getId()%>"
-                                                            name="id"></div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label"><strong>Password</strong></label>
+                                                        <input class="form-control" type="text" value="<%=user.getId()%>" name="id"></div>
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <button class="btn btn-primary btn-sm" type="submit">Save Settings
-                                                </button>
+                                                <button class="btn btn-primary btn-sm" type="submit">Lưu </button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="card shadow">
                                     <div class="card-header py-3">
-                                        <p class="text-primary m-0 fw-bold">Contact Settings</p>
+                                        <p class="text-primary m-0 fw-bold">Liên Hệ</p>
                                     </div>
                                     <div class="card-body">
                                         <form>
-                                            <div class="mb-3"><label class="form-label"
-                                                                     for="address"><strong>Address</strong></label><input
-                                                    class="form-control" type="text" id="address"
-                                                    placeholder="Sunset Blvd, 38" name="address"></div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="address"><strong>Địa chỉ</strong></label>
+                                                <input class="form-control" type="text" id="address" placeholder="Linh Trung, Thủ Đức" name="address"></div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="mb-3"><label class="form-label"
-                                                                             for="city"><strong>City</strong></label><input
-                                                            class="form-control" type="text" id="city"
-                                                            placeholder="Los Angeles" name="city"></div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="city"><strong>Thành phố</strong></label>
+                                                        <input class="form-control" type="text" id="city" placeholder="TP. Hồ Chí Mình" name="city"></div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="mb-3"><label class="form-label" for="country"><strong>Country</strong></label><input
-                                                            class="form-control" type="text" id="country"
-                                                            placeholder="USA" name="country"></div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="country"><strong>Quốc gia</strong></label>
+                                                        <input class="form-control" type="text" id="country" placeholder="Việt Nam" name="country"></div>
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <button class="btn btn-primary btn-sm" type="submit">
-                                                    Save&nbsp;Settings
-                                                </button>
+                                                <button class="btn btn-primary btn-sm" type="submit">Lưu</button>
                                             </div>
                                         </form>
                                     </div>
@@ -357,30 +346,30 @@
                     </div>
                 </div>
                 <div class="card shadow mb-5">
-                    <div class="card-header py-3">
-                        <p class="text-primary m-0 fw-bold">Forum Settings</p>
-                    </div>
+<%--                    <div class="card-header py-3">--%>
+<%--                        <p class="text-primary m-0 fw-bold">Forum Settings</p>--%>
+<%--                    </div>--%>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <form>
-                                    <div class="mb-3"><label class="form-label"
-                                                             for="signature"><strong>Signature</strong><br></label><textarea
-                                            class="form-control" id="signature" rows="4" name="signature"></textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="form-check form-switch"><input class="form-check-input"
-                                                                                   type="checkbox"
-                                                                                   id="formCheck-1"><label
-                                                class="form-check-label" for="formCheck-1"><strong>Notify me about new
-                                            replies</strong></label></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <button class="btn btn-primary btn-sm" type="submit">Save Settings</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+<%--                        <div class="row">--%>
+<%--                            <div class="col-md-6">--%>
+<%--                                <form>--%>
+<%--                                    <div class="mb-3"><label class="form-label"--%>
+<%--                                                             for="signature"><strong>Signature</strong><br></label><textarea--%>
+<%--                                            class="form-control" id="signature" rows="4" name="signature"></textarea>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="mb-3">--%>
+<%--                                        <div class="form-check form-switch"><input class="form-check-input"--%>
+<%--                                                                                   type="checkbox"--%>
+<%--                                                                                   id="formCheck-1"><label--%>
+<%--                                                class="form-check-label" for="formCheck-1"><strong>Notify me about new--%>
+<%--                                            replies</strong></label></div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="mb-3">--%>
+<%--                                        <button class="btn btn-primary btn-sm" type="submit">Save Settings</button>--%>
+<%--                                    </div>--%>
+<%--                                </form>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                     </div>
                 </div>
             </div>
